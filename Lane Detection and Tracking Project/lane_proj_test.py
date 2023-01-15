@@ -16,7 +16,7 @@ def gauss(image):
 
 # CANNY EDGE DETECTION
 def canny(image):
-    edges = cv2.Canny(image, 100, 200)
+    edges = cv2.Canny(image, 200, 300)
     return edges
 
 
@@ -25,17 +25,17 @@ img = cv2.imread("sample lane image.jpg")
 
 # GREYSCALING
 grey_img = grey(img)
-plt.imshow(grey_img)
+# plt.imshow(grey_img)
 
 # GAUSSIAN BLUR
 gaussian_img = gauss(grey_img)
-plt.imshow(gaussian_img, cmap="gray")
-plt.title('Gaussian Blur'), plt.xticks([]), plt.yticks([])
+# plt.imshow(gaussian_img, cmap="gray")
+# plt.title('Gaussian Blur'), plt.xticks([]), plt.yticks([])
 
 # CANNY EDGE
 canny_img = canny(gaussian_img)
-plt.imshow(canny_img, cmap="gray")
-plt.title('Edge Image'), plt.xticks([]), plt.yticks([])
+# plt.imshow(canny_img, cmap="gray")
+# plt.title('Edge Image'), plt.xticks([]), plt.yticks([])
 
 # TO HSV
 hsv_img = cv2.cvtColor(img, cv2.COLOR_RGB2HSV)
